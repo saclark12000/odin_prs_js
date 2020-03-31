@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://kit.fontawesome.com/034fad17a6.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Da+2|Raleway&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title">
+            <h1>Paper, Rock, Scissors</h1>
+            <h2>JavaScript Edition</h2>
+        </div>
+
+        <div class="board">
+            <div class="board-left">
+                <div class="move-menu">
+                    <h3>Your move:</h3>
+                    <i class="far fa-hand-paper move move-button active" id="paper"></i>
+                    <i class="far fa-hand-rock move move-button active" id="rock"></i>
+                    <i class="far fa-hand-scissors move move-button active" id="scissors"></i>
+                </div>
+                <div class="move-menu">
+                    <h3>Computer's move:</h3>
+                    <i class="far fa-hand-paper move move-computer" id="computer-paper"></i>
+                    <i class="far fa-hand-rock move move-computer" id="computer-rock"></i>
+                    <i class="far fa-hand-scissors move move-computer" id="computer-scissors"></i>
+                </div>
+            </div>
+
+            <div class="board-right">
+                <div id="board-message">
+                    Make your move on the left.
+                </div>
+                <div id="board-menu" class="hidden">
+                    <div id="board-menu-message">Play another round?</div>
+                    <div>
+                        <i class="far fa-thumbs-up menu-button" id="yes"></i>
+                        <i class="far fa-thumbs-down menu-button" id="no"></i>
+                    </div>
+                </div>
+                <div class="board-score">
+                    <div>Player : <span class="score" id="player-score">0</span></div>
+                    <div>Computer : <span class="score" id="computer-score">0</span></div>
+                    <div>Draw : <span class="score" id="draw-score">0</span></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="prs.js"></script>
+    </body>
+</html>

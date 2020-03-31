@@ -1,0 +1,118 @@
+/* font-family: 'Raleway', sans-serif;
+font-family: 'Baloo Da 2', cursive; */
+
+
+.title h1 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.title h2 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 18px;
+    color: red;
+    font-style: italic;
+    margin-top: -20px;
+}
+    
+.move-menu h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.move-menu .move {
+    font-size: 72px;
+    color: purple;
+    padding: 5px;
+    margin: 0px 15px;
+    border: 5px solid purple;
+}
+
+.move-menu .active:hover {
+    font-size: 72px;
+    margin: 0px 15px;
+    background-color: lightgoldenrodyellow;
+    cursor: pointer;
+}
+
+.move-menu .move-selected {
+    color: orange;
+    background-color: lightgoldenrodyellow;
+    border: 5px solid yellow;
+}
+
+.move-menu .move-disabled {
+    color: lightgrey;
+    background-color: white;
+    border: 5px solid lightgray;
+}
+
+.board {
+    display:flex;
+    white-space: nowrap;
+}
+
+.board .board-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-left: 3px solid black;
+    padding-left: 3px;
+}
+
+#board-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    white-space: nowrap;
+    min-width: 100%;
+    min-height: 125px;
+}
+
+#board-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    white-space: nowrap;
+    min-height: 150px;
+}
+
+#board-menu .menu-button {
+    font-size: 72px;
+    color: purple;
+    padding: 5px;
+    margin: 0px 15px;
+    border: 5px solid purple;
+}
+
+#board-menu .menu-button:hover {
+    font-size: 72px;
+    margin: 0px 15px;
+    background-color: lightgoldenrodyellow;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.board-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+    min-height: 125px;
+}
