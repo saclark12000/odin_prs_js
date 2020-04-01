@@ -145,6 +145,7 @@
                     document.querySelector('#no').classList.add('hidden');
 
                     // Scoreboard Menu
+                    document.querySelector('#board-message').innerHTML = message;
                     document.querySelector('#board-menu-message').innerHTML = "Play new game?";
                     init = true;
                 }
