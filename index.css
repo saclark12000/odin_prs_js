@@ -16,6 +16,7 @@ font-family: 'Baloo Da 2', cursive; */
     color: red;
     font-style: italic;
     margin-top: -20px;
+    margin-bottom: -10px;
 }
     
 .move-menu h3 {
@@ -53,7 +54,9 @@ font-family: 'Baloo Da 2', cursive; */
 
 .board {
     display:flex;
+    flex-wrap: wrap;
     white-space: nowrap;
+    min-width: 680px;
 }
 
 .board .board-right {
@@ -61,20 +64,28 @@ font-family: 'Baloo Da 2', cursive; */
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    border-left: 3px solid black;
-    padding-left: 3px;
+    flex: flex-grow 50%;
+}
+
+.board .board-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: flex-grow 50%;
+    padding: 3px;
 }
 
 #board-message {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     white-space: nowrap;
     min-width: 100%;
-    min-height: 125px;
+    min-height: 75px;
 }
 
 #board-menu {
@@ -110,9 +121,12 @@ font-family: 'Baloo Da 2', cursive; */
 .board-score {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex: flex-grow 100%;
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     min-height: 125px;
+    min-width: 100%;
+    padding-top: 25px;
 }

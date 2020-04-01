@@ -1,21 +1,7 @@
 
 
             // init player choice
-            function playerPlay(){
-                let init = true;
-                let welcome = "Hello, choose"
-                let move = "";
-                while(move != "Paper" && move != "Rock" && move != "Scissors"){
-                    if (init) {
-                        init = false; 
-                    } else {
-                        welcome = move + " is invalid, try again.";
-                    }
-                    var playerInput = prompt(`${welcome} Paper, Rock or Scissors? `);
-                    move = playerInput ? playerInput.slice(0,1).toUpperCase() + playerInput.slice(1,).toLowerCase() : null;
-                }
-                return move;
-            }
+            var init = false;
 
             // init computer choice
             function computerPlay(){
@@ -47,6 +33,7 @@
 
             // scoreboard logic
             function scoreboard(currentRound){
+                console.log('scoreboard')
                 switch(currentRound.outcome){
                     case "draw":
                         drawScore++;
@@ -56,7 +43,6 @@
                     case "player":
                         playerScore++;
                         message = "You have won this round!"
-                        
                 
                         break;
                     case "computer":
@@ -65,9 +51,10 @@
                 
                         break;
                     default:
+
                         break;
                 }
-
+                console.log(playerScore, computerScore, drawScore)
                 document.querySelector('#board-message').innerHTML = message;
                 document.querySelector('#player-score').innerHTML = playerScore;
                 document.querySelector('#computer-score').innerHTML = computerScore;
@@ -107,8 +94,12 @@
             }
 
             this.handleBoardSelect = function(e) {
-                console.log(e.target.id)
                 if (e.target.id == "yes") {
+                    if (init == true) {
+                        init = false;
+                        [playerScore, computerScore, drawScore] = [0,0,0];
+                        scoreboard({"playerSelection":null, "computerSelection":null, "outcome":null});
+                    }
                     document.querySelector('#board-message').innerHTML = "Make your move on the left.";
 
                     // Menu Init :
@@ -133,7 +124,7 @@
                     document.querySelector('#board-menu-message').innerHTML = "Play another round?";
                     document.querySelector('#board-menu').classList.add('hidden');
 
-                }else if (e.target.id == "no") {
+                } else if (e.target.id == "no") {
 
                     // compose game over message
                     if (playerScore > computerScore) {
@@ -144,28 +135,18 @@
                         message = "Game over, you tied!";
                     }
 
-                    message = message  
-                    + "<br> Player : " + playerScore 
-                    + "<br>Computer : " + computerScore
-                    + "<br>Draw : " + drawScore;
-
-                     // Menu Init :
-                     document.querySelectorAll('.move').forEach((button) =>{
+                    // Menu Init :
+                    document.querySelectorAll('.move').forEach((button) =>{
                         button.classList.remove('move-selected');
                         button.classList.remove('move-disabled');
-
                         button.classList.add('move-disabled');
                     });
 
                     document.querySelector('#no').classList.add('hidden');
-                    document.querySelector('.board-score').classList.add('hidden');
 
-                    // Scoreboard Menu :
-                    //document.querySelector('#board-menu').classList.add('hidden');
+                    // Scoreboard Menu
                     document.querySelector('#board-menu-message').innerHTML = "Play new game?";
-                    [playerScore, computerScore, drawScore] = [0,0,0];
-                    scoreboard({"playerSelection":null, "computerSelection":null, "outcome":null}
-                    )
+                    init = true;
                 }
 
                 
